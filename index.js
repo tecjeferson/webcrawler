@@ -2,8 +2,14 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const crawler = require('./lib/crawler')
-const request = require('request')
-const cheerio = require('cheerio')
+// const request = require('request')
+// const cheerio = require('cheerio')
+
+//crawler.pegarDados('https://www.oantagonista.com', '.container-post-home', 'h2', 'p')
+
+// console.log(crawler {
+//     firstTag
+// })
 
 const port = process.env.PORT || 3000
 
@@ -16,58 +22,18 @@ app.get('/', (req, res) => {
 
 })
 
-
-app.get('/result', (req, res) => {
+app.get('/result', async (req, res) => {
     const {
         site,
         MainClass,
         FirstTag,
         SecondTag
     } = req.query
-
-
-
-    return (
-        request(site, function (err, res, body) {
-            if (err) console.log('Error: ' + err)
-
-            const $ = cheerio.load(body);
-
-            $(MainClass).each(function list() {
-                const first = $(this).find(FirstTag).text().trim()
-                const second = $(this).find(SecondTag).text().trim()
-                console.log(first)
-                if (site && MainClass && FirstTag && SecondTag) {
-
-                    //const crawlerWeb = crawler(endereco, geral, primeiro, segundo)
-
-                    res.render('result', {
-                        error: false,
-                        first: first,
-                        second: second
-
-                    })
-                } else {
-                    res.render('result', {
-                        error: "Erro no crawler"
-                    })
-                }
-                // console.log(this.site,
-                //     MainClass,
-                //     FirstTag,
-                //     SecondTag)
-                console.log(first)
-
-            })
-            const crawler = crawler(site, MainClass, FirstTag, SecondTag)
-        })
-    )
-
-
+    const result = await crawler(site, MainClass, FirstTag, SecondTag)
+    res.render('result', {
+        result
+    })
 })
-
-
-
 
 
 

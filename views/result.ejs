@@ -1,12 +1,13 @@
 <%- include('header') %>
 
-<% if(error){ %>
-<%= error %>
-<% }else{ %>
-<%= second %>
+<h1>Result page</h1>
+<a href="/">Voltar</a>
 
-<% } %>
-
+<ul>
+    <% result.forEach(title=>{ %>
+    <li><%= title.first %></li>
+    <% }) %>
+</ul>
 
 
 
