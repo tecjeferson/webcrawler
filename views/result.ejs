@@ -1,14 +1,33 @@
 <%- include('header') %>
 
-<h1>Result page</h1>
-<a href="/">Voltar</a>
 
-<ul>
-    <% result.forEach(title=>{ %>
-    <li><%= title.first %></li>
-    <% }) %>
-</ul>
 
+
+
+
+<div class="container mt-5">
+    <h1>Tags used</h1>
+    <div class="row">
+        <div class="col">
+            <strong>Site:</strong> <%= site %><br>
+            <strong>Tag Principal:</strong> <%= MainClass %><br>
+            <strong>Primeira tag:</strong> <%= FirstTag %><br>
+            <strong>Segunda tag:</strong> <%= SecondTag %>
+        </div>
+    </div>
+    <h1>Crawler Result</h1>
+    <div class="row" id="result">
+        <div class="col ml-1">
+            <% result.map(title=>{ %>
+            <li>
+                <strong>Titulo: </strong><%= title.first %><br>
+                <strong>Subtitulo: </strong><%= title.second %><br><br>
+            </li>
+            <% }) %>
+        </div>
+
+    </div>
+</div>
 
 
 <%- include('footer') %>

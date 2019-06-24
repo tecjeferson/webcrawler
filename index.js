@@ -31,7 +31,11 @@ app.get('/result', async (req, res) => {
     } = req.query
     const result = await crawler(site, MainClass, FirstTag, SecondTag)
     res.render('result', {
-        result
+        result,
+        site,
+        MainClass,
+        FirstTag,
+        SecondTag
     })
 })
 

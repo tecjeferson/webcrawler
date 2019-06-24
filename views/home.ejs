@@ -1,23 +1,50 @@
 <%- include('header') %>
 
-<a href="/result">Ir para result</a>
-<br>
-<br>
+<div class="container mt-5 ">
+    <div class="row mt-5">
+        <div class="col">
+            <p>
+                Para utilizar essa ferramenta você precisa saber as tags HTML do site e inserir nos campos abaixo.
+                Ex: Use o <strong>site: http://www.jefersonvrocha.com.br/, conteiner: .container , Primeira tag: h1,
+                    Segunda
+                    tag: h4</strong>
+            </p>
 
-<form method="GET" action="/result">
-    <input type="text" name="site" placeholder="Site">
-    <input type="text" name="MainClass" placeholder="Main class">
-    <input type="text" name="FirstTag" placeholder="First Tag">
-    <input type="text" name="SecondTag" placeholder="Second Tag">
-    <button>Crawler</button>
+        </div>
+    </div>
+
+    <form class="col-6" method="GET" action="/result">
+        <div class="form-group mt-5">
+            <label>Site a target</label>
+            <input class="form-control" type="text" name="site" placeholder="Site" required>
+        </div>
+        <div class="form-group">
+            <label>Container</label>
+            <input class="form-control" type="text" name="MainClass" placeholder="Main class" required>
+        </div>
+        <div class="form-group">
+            <label>Primeira tag a buscar conteúdo.</label>
+            <input class="form-control" type="text" name="FirstTag" placeholder="First Tag" required>
+        </div>
+        <div class="form-group">
+            <label>Segunda tag a buscar conteúdo.</label>
+            <input class="form-control" type="text" name="SecondTag" placeholder="Second Tag">
+        </div>
+        <button type="submit" class="btn btn-primary">Crawler</button>
+
+    </form>
+
+    <div class="row mt-5">
+        <div class="col">
+            <h2>
+                Esta ferramenta foi desenvolvida apenas para fins demonstrativos e
+                educativos, não deve ser utilizada de outra forma.
+            </h2>
+
+        </div>
+    </div>
 
 
 
 
-
-
-</form>
-
-
-
-<%- include('footer') %>
+    <%- include('footer') %>

@@ -1,3 +1,13 @@
-h1 {
-    text-align: center;
+li {
+    list-style-type: none;
+}
+
+#result {
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.linkedin a {
+
+    color: rgb(147, 190, 253) !important;
 }
