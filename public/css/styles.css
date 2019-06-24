@@ -1,13 +1,15 @@
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 #result {
-    border: 1px solid #000;
-    border-radius: 10px;
+  border: 1px solid #000;
+  border-radius: 10px;
 }
 
 .linkedin a {
-
-    color: rgb(147, 190, 253) !important;
+  color: rgb(147, 190, 253) !important;
+}
+.github a {
+  color: #ce4cff !important;
 }
